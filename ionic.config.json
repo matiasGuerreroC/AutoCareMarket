@@ -1,0 +1,7 @@
+{
+  "name": "AutoCareMarket",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
