@@ -1,0 +1,41 @@
+<ion-header class="custom-header">
+
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row class="ion-align-items-center ion-justify-content-between">
+  
+        <!-- Logo -->
+        <ion-col size="12" size-md="2" class="ion-text-start">
+          <img src="assets/logo.png" alt="AutoCare Market" height="40" />
+        </ion-col>
+  
+        <!-- Barra de búsqueda -->
+        <ion-col size="12" size-md="4">
+          <ion-searchbar placeholder="Buscar" show-clear-button="focus"></ion-searchbar>
+        </ion-col>
+  
+        <!-- Menú -->
+        <ion-col size="12" size-md="4" class="ion-text-center">
+          <ion-buttons>
+            <ion-button fill="clear" routerLink="/home">Inicio</ion-button>
+            <ion-button fill="clear" routerLink="/productos">Productos</ion-button>
+            <ion-button fill="clear" routerLink="/categorias">Categorías</ion-button>
+            <ion-button fill="clear" routerLink="/about">Sobre Nosotros</ion-button>
+          </ion-buttons>
+        </ion-col>
+  
+        <!-- Carrito y login -->
+        <ion-col size="12" size-md="2" class="ion-text-end">
+          <ion-buttons>
+            <ion-button fill="clear">
+              <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+            </ion-button>
+            <ion-button color="primary" routerLink="/login">Inicia Sesión</ion-button>
+          </ion-buttons>
+        </ion-col>
+  
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+
+</ion-header>
