@@ -1,0 +1,41 @@
+.custom-footer {
+    background-color: #fff;
+    padding: 24px 16px;
+    border-top: 1px solid #ddd;
+    color: #1c1c1c;
+  }
+  
+  .logo-text {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  .logo-primary {
+    color: #0074c1; // azul
+  }
+  
+  .logo-secondary {
+    color: #2c2c2c;
+  }
+  
+  .logo-market {
+    font-weight: 400;
+    font-size: 16px;
+    color: #444;
+  }
+  
+  .social-icons {
+    margin-top: 12px;
+  }
+  
+  .social-icons ion-icon {
+    font-size: 20px;
+    margin-right: 12px;
+    color: #888;
+  }
+
+  .social-icons ion-icon:hover {
+    color: #0074c1;
+    transition: color 0.2s;
+  }

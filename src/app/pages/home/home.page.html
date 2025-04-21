@@ -1,30 +1,4 @@
-<ion-header>
-  <ion-toolbar color="light">
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>
-      <img src="assets/logo.png" alt="AutoCare Market" height="30">
-    </ion-title>
-    <ion-buttons slot="end">
-      <ion-button fill="clear">
-        <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
-      </ion-button>
-      <ion-button routerLink="/home">
-        Inicio
-      </ion-button>
-      <ion-button routerLink="/about">
-        Sobre Nosotros
-      </ion-button>
-      <ion-button routerLink="/login">
-        Iniciar Sesion
-      </ion-button>
-      <ion-button routerLink="/register">
-        Registrarse
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+<app-header></app-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
@@ -33,34 +7,13 @@
     </ion-toolbar>
   </ion-header>
 
+  <!-- Banner de portada -->
+  <div class="banner-container">
+    <img src="assets/portada.png" alt="Portada AutoCare Market" />
+  </div>
+
+
   <!-- Footer -->
-  <ion-grid class="footer ion-text-center ion-padding">
-    <ion-row>
-      <ion-col size="12" size-md="3">
-        <strong>AutoCare Market</strong><br />
-        <ion-icon name="logo-facebook"></ion-icon>
-        <ion-icon name="logo-instagram"></ion-icon>
-        <ion-icon name="logo-youtube"></ion-icon>
-        <ion-icon name="logo-tiktok"></ion-icon>
-      </ion-col>
-      <ion-col size="6" size-md="3">
-        <strong>Te ayudamos</strong><br />
-        Ayuda al cliente<br />
-        Política de despacho<br />
-        Seguimiento
-      </ion-col>
-      <ion-col size="6" size-md="3">
-        <strong>Nuestra Empresa</strong><br />
-        Sobre nosotros<br />
-        CyberDay<br />
-        CyberMonday
-      </ion-col>
-      <ion-col size="6" size-md="3">
-        <strong>Usuario</strong><br />
-        Iniciar sesión<br />
-        Registrarse
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <app-footer></app-footer>
 
 </ion-content>

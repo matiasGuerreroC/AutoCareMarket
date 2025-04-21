@@ -1,0 +1,22 @@
+.custom-header {
+  background-color: #fff !important;
+  color: #000;
+
+  ion-toolbar {
+    --background: #fff !important;
+    --color: #000 !important;
+    border-bottom: 1px solid #ddd;
+  }
+
+  ion-icon,
+  ion-button {
+    color: #000 !important;
+  }
+
+  ion-searchbar {
+    --border-radius: 20px;
+    --box-shadow: none;
+    --background: #f0f0f0;
+    color: #000;
+  }
+}
