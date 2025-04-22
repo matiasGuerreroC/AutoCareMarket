@@ -1,17 +1,34 @@
 <app-header></app-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">home</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <!-- Banner de portada -->
-  <div class="banner-container">
-    <img src="assets/portada.png" alt="Portada AutoCare Market" />
-  </div>
+  <ion-img src="assets/portada.png" alt="Banner de Portada" class="banner-image"></ion-img>
 
+  <ion-toolbar class="banner">
+    <ion-grid>
+      <!-- Título principal -->
+      <ion-row>
+        <ion-col size="6" size-md="6">
+          <div class="title">Oferta del Día</div>
+          
+          <ion-grid>
+            <ion-row class="frame-row">
+              <ion-col size="auto" class="frame">
+                <img class="component" src="assets/component1.png" />
+                <div class="text-wrapper">22h 55m 20s restantes</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+
+        </ion-col>
+  
+        <ion-col size="6" size-md="6" class="ver-ofertas">
+          <ion-button class="button" fill="clear"> Ver Ofertas</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
 
   <!-- Footer -->
   <app-footer></app-footer>

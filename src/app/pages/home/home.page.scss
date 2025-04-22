@@ -1,12 +1,68 @@
-.banner-container {
+.banner-image {
     width: 100%;
-    max-height: 400px;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
     overflow: hidden;
+  }
+
+
+.banner {
+  height: 200px;
   
-    img {
-      width: auto;
-      height: 50%;
-      display: block;
-      object-fit: cover;
+
+  ion-grid {
+    height: 100%;
+    padding: 0 24px;
+    background-color: #11263B;
+  }
+
+  .title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 64px;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+
+  .ver-ofertas {
+    display: flex;
+    justify-content: center;  // centrado horizontal
+    align-items: center;      // centrado vertical
+    height: 200px;            // o el alto que tenga tu banner
+
+    .button {
+      width: 280px;
+      height: 88px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      text-align: center;
     }
-  }  
+  }
+  
+  .frame-row {
+    margin-top: 20px;
+
+    .frame {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .component {
+        width: 54px;
+        height: 54px;
+      }
+
+      .text-wrapper {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 40px;
+        font-weight: 400;
+        color: #fff;
+        line-height: 16px;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+  
