@@ -1,0 +1,46 @@
+    .review-card {
+    min-height: 215px;
+    text-align: left;
+    border-radius: 12px;
+    padding: 16px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+    .comentario {
+        font-size: 14px;
+        font-style: italic;
+        color: #333;
+        min-height: 30px;
+      }
+
+    ion-card-content {
+        display: flex;
+        flex-direction: column;
+        flex: 1; // ocupa todo el espacio restante
+        justify-content: space-between;
+        padding-top: 10px;
+
+        ion-card-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #000000;
+          }
+    }
+
+    .estrellas {
+        font-size: 16px;
+        color: #FFD700;
+        margin-bottom: 8px;
+      }
+      
+      .avatar {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 8px;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+  }

@@ -82,6 +82,24 @@
 
   </ion-grid>
 
+  <!--Reseñas-->
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col size="12">
+        <app-section-title title="Reseñas"></app-section-title>
+      </ion-col>
+    </ion-row>
+    
+    <!-- Reseñas -->
+    <ion-row class="reseñas-section">
+      <ion-col size="12" class="reseña-col">
+        <app-review-carousel [resenas]="resenasClientes"></app-review-carousel>
+      </ion-col>
+    </ion-row>
+    
+  </ion-grid>
+  
+
   <!-- Footer -->
   <app-footer></app-footer>
 
