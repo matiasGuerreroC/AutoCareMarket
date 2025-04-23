@@ -16,3 +16,10 @@
   margin-bottom: 1rem;
   
 }
+.custom-input {
+  display: flex;
+  align-items: center; /* Asegura que los elementos estén alineados verticalmente */
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: #1e293b; /* Fondo del input */
+  padding: 8px; /* Espaciado interno */
+}

@@ -1,10 +1,11 @@
 <div class="custom-input-container">
-  <label [ngClass]="control.invalid && control.touched ? 'label-error' : 'label-normal'">    {{ label }}
+  <label [ngClass]="control.invalid && control.touched ? 'label-error' : 'label-normal'">    
+  {{ label }}
   </label>
 
   <ion-item class="custom-input" lines="none">
     <ion-input 
-      [type]="type" 
+      [type]="hide ? 'password' : 'text'" 
       [formControl]="control"
       [autocomplete]="autocomplete"
       color="custom-input"
