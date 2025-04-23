@@ -65,4 +65,67 @@
     }
   }
 }
-  
+
+.imperdible-container {
+  background: radial-gradient(
+    50% 50% at 43% 49%,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(195, 208, 226, 1) 42%,
+    rgba(98, 134, 180, 1) 100%
+  );
+  padding: 32px 16px;
+
+  .producto-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .imperdible-banner {
+      width: 100%;
+    }
+
+    .kit-img {
+      width: 100%;
+      max-width: 500px;
+      object-fit: contain;
+    }
+
+    .sku-card {
+      background-color: #fff;
+      border-radius: 12px;
+      margin: 16px 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      max-width: 200px;
+
+      ion-card-content {
+        font-size: 16px;
+        color: #000;
+        line-height: 1.5;
+      }
+    }
+
+    .ver-producto-btn {
+      width: 180px;
+      font-weight: 600;
+      font-size: 16px;
+      height: 48px;
+      border-radius: 10px;
+      --background: #0074c1;
+      --background-hover: #005fa3;
+      --color: #fff;
+    }    
+  }
+
+  .descuento-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .descuento-img {
+      width: 100%;
+      max-width: 240px;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+}
