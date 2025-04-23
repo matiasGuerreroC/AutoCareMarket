@@ -1,4 +1,3 @@
-import { I } from '@angular/common/common_module.d-Qx8B6pmN';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({

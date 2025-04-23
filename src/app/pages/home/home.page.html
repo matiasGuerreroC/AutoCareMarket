@@ -66,8 +66,21 @@
   </ion-grid>
 
   <!-- Sección de productos destacados -->
-  <app-section-title title="Productos Destacados"></app-section-title>
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col size="12">
+        <app-section-title title="Productos Destacados"></app-section-title>
+      </ion-col>
+    </ion-row>
 
+    <!-- Productos destacados -->
+    <ion-row class="productos-destacados">
+      <ion-col size="12" class="producto-col">
+        <app-product-carousel [productos]="productosDestacados"></app-product-carousel>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
 
   <!-- Footer -->
   <app-footer></app-footer>
