@@ -1,9 +1,11 @@
 <ion-footer class="custom-footer">
   <ion-grid>
     <ion-row class="ion-align-items-start">
-      <ion-col size="12" size-md="3">
+      <ion-col size="12" size-md="6">
         <div class="logo-text">
-          <img src="assets/logo_letras.png" alt="AutoCare Market" style="height: 40px; margin-bottom: 8px;" />
+          <a [routerLink]="['/home']">
+            <img src="assets/logo_letras.png" alt="AutoCare Market" style="height: 40px; margin-bottom: 8px;" />
+          </a>
         </div>
 
         <div class="social-icons">
@@ -14,7 +16,7 @@
         </div>
       </ion-col>
 
-      <ion-col size="6" size-md="3">
+      <ion-col size="6" size-md="2">
         <strong>TE AYUDAMOS</strong>
         <p>
           Ayuda al cliente<br />
@@ -23,17 +25,21 @@
         </p>
       </ion-col>
 
-      <ion-col size="6" size-md="3">
+      <ion-col size="6" size-md="2">
         <strong>NUESTRA EMPRESA</strong><br />
-        Sobre nosotros<br />
+        <p>
+        <a [routerLink]="['/about']">Sobre nosotros</a><br />
         CyberDay<br />
         CyberMonday
+        </p>
       </ion-col>
 
-      <ion-col size="6" size-md="3">
+      <ion-col size="6" size-md="2">
         <strong>USUARIO</strong><br />
-        Iniciar Sesión<br />
-        Registrarse
+        <p>
+        <a [routerLink]="['/login']">Iniciar Sesión</a><br />
+        <a [routerLink]="['/register']">Registrarse</a>
+        </p>
       </ion-col>
     </ion-row>
   </ion-grid>

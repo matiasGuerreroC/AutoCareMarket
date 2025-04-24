@@ -18,7 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 register(); // Registra los elementos de Swiper
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, SectionTitleComponent, ProductCarouselComponent, ReviewCarouselComponent, CustomInputComponent]
+  declarations: [HeaderComponent, FooterComponent, SectionTitleComponent, ProductCarouselComponent, ReviewCarouselComponent, CustomInputComponent],
   imports: [
     CommonModule,
     IonicModule,

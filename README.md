@@ -16,9 +16,10 @@ Marketplace de productos para el cuidado de automóviles, desarrollado como part
    - [Navegación General](#navegación-general)
    - [Flujo del Usuario](#flujo-del-usuario)
    - [Principios de UX aplicados](#principios-de-ux-aplicados)
-7. [Estructura inicial del proyecto](#estructura-inicial-del-proyecto)
-8. [Instrucciones para correr el proyecto](#instrucciones-para-correr-el-proyecto)
-9. [Estado actual del proyecto](#estado-actual-del-proyecto)
+7. [Componentes reutilizables implementados](#componentes-reutilizables-implementados)
+8. [Estructura inicial del proyecto](#estructura-inicial-del-proyecto)
+9. [Instrucciones para correr el proyecto](#instrucciones-para-correr-el-proyecto)
+10. [Estado actual del proyecto](#estado-actual-del-proyecto)
 
 ## Descripción
 
@@ -63,7 +64,7 @@ Marketplace de productos para el cuidado de automóviles, desarrollado como part
 - RNF-07: La experiencia de usuario debe ser clara, intuitiva y accesible para todos los perfiles.
 
 ## Prototipo UI/UX
-El prototipo de la aplicación, incluyendo los mockups de las pantallas principales y los formularios de inicio de sesión y registro, está disponible en Figma: [Enlace al prototipo](#).
+El prototipo de la aplicación, incluyendo los mockups de las pantallas principales y los formularios de inicio de sesión y registro, está disponible en Figma: [Enlace al prototipo](https://www.figma.com/design/SO7kOEef8SZwnbPXQBWL5j/AutoCare-Market---Prototipo-UI?node-id=27-351&t=zjivsVNCvianOUnj-1).
 
 ## Definición de la Navegación y Experiencia de Usuario (UX)
 
@@ -106,6 +107,15 @@ AutoCare Market implementa una navegación basada en un header superior visible 
 - **Minimalismo:** Diseño claro que evita la sobrecarga de información en pantalla.
 - **Reducción de fricción:** El usuario puede navegar libremente por el contenido sin necesidad de estar registrado, salvo al momento de realizar una compra.
 
+## Componentes reutilizables implementados
+
+- **HeaderComponent:** Barra de navegación con logo, búsqueda, menú y botones dinámicos según sesión.
+- **FooterComponent:** Pie de página con enlaces útiles y redes sociales.
+- **SectionTitleComponent:** Título de sección estilizado con fondo degradado.
+- **ProductCarouselComponent:** Carrusel dinámico para mostrar productos destacados.
+- **ReviewCarouselComponent:** Carrusel con reseñas de usuarios, avatar e iconos de estrella.
+- **CustomInputComponent:** Campo de entrada reutilizable con estilos personalizados, validación visual y soporte para mostrar/ocultar contraseñas. Actualmente utilizado en la vista de Login.
+
 ## Estructura inicial del proyecto
 
 ```bash
@@ -121,6 +131,10 @@ AutoCareMarket/
 │   │   └── components/     # Componentes reutilizables
 │   │       ├── header/     # Componente de encabezado
 │   │       └── footer/     # Componente de pie de página
+│   │       └── custom-input/ # Componente de entrada personalizada
+│   │       └── product-carousel/ # Componente de carrusel de productos
+│   │       └── review-carousel/ # Componente de carrusel de reseñas
+│   │       └── section-title/ # Componente de título de sección
 │   │
 │   │   └── shared/        # Servicios y utilidades compartidas
 │   ├── assets/
@@ -156,5 +170,9 @@ Esto abrirá la aplicación en el navegador (`http://localhost:8100`).
 
 ## Estado actual del proyecto
 
-Entrega Parcial 1 en desarrollo – EP 1.7 (pantallas principales) en curso.
- 
+**Estado del Proyecto:**
+Entrega Parcial 1 finalizada. Se completaron los siguientes puntos:
+
+- ✅ EP 1.1 a EP 1.6 implementados.
+- ✅ EP 1.7: Se desarrollaron las vistas principales: Home, About, Login y Register.
+- ✅ EP 1.8: Se integraron componentes reutilizables con Ionic para mejorar la interfaz.
