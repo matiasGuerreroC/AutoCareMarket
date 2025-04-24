@@ -4,22 +4,22 @@
   <!-- Banner de portada -->
   <ion-img src="assets/portada.png" alt="Banner de Portada" class="banner-image"></ion-img>
 
+  <!-- Banner de oferta del dia -->
   <ion-toolbar class="banner">
     <ion-grid>
       <!-- Título principal -->
       <ion-row>
         <ion-col size="6" size-md="6">
           <div class="title">Oferta del Día</div>
-          
-          <ion-grid>
-            <ion-row class="frame-row">
-              <ion-col size="auto" class="frame">
-                <img class="component" src="assets/component1.png" />
-                <div class="text-wrapper">22h 55m 20s restantes</div>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
 
+          <ion-row class="frame-row">
+            <ion-col size="auto" class="frame">
+              <img class="component" src="assets/component1.png" />
+              <ion-text class="text-wrapper">
+                <p>22h 55m 20s restantes</p>
+              </ion-text>                
+            </ion-col>
+          </ion-row>
 
         </ion-col>
   
@@ -29,6 +29,76 @@
       </ion-row>
     </ion-grid>
   </ion-toolbar>
+
+  <!-- Producto Imperdible -->
+  <ion-grid class="imperdible-container">
+    <ion-row class="ion-align-items-center">
+      
+      <!-- Columna izquierda: texto + kit + SKU -->
+      <ion-col size="12" size-md="4" class="producto-info">
+        <!-- Título como imagen -->
+        <img src="assets/imperdible-titulo.png" alt="Imperdible" class="imperdible-banner" />
+
+        <!-- SKU + botón -->
+        <ion-card class="sku-card">
+          <ion-card-content>
+            <strong>MOMO</strong><br />
+            Kit de Lavado y Secado Momo 9 Piezas<br />
+            SKU: 1054087
+          </ion-card-content>
+        </ion-card>
+
+        <ion-button color="primary" class="ver-producto-btn">Ver Producto</ion-button>
+      </ion-col>
+
+      <!-- Columna central: imagen del producto -->
+      <ion-col size="12" size-md="4" class="producto-img-col">
+        <!-- Kit de imágenes -->
+        <img src="assets/kit-lavado.png" alt="Kit de Lavado Momo" class="kit-img" />
+      </ion-col>
+
+      <!-- Columna derecha: imagen de descuento -->
+      <ion-col size="12" size-md="4" class="descuento-col">
+        <img src="assets/descuento-30.png" alt="30% DCTO" class="descuento-img" />
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+  <!-- Sección de productos destacados -->
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col size="12">
+        <app-section-title title="Productos Destacados"></app-section-title>
+      </ion-col>
+    </ion-row>
+
+    <!-- Productos destacados -->
+    <ion-row class="productos-destacados">
+      <ion-col size="12" class="producto-col">
+        <app-product-carousel [productos]="productosDestacados"></app-product-carousel>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+  <!--Reseñas-->
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col size="12">
+        <app-section-title title="Reseñas"></app-section-title>
+      </ion-col>
+    </ion-row>
+    
+    <!-- Reseñas -->
+    <ion-row class="reseñas-section">
+      <ion-col size="12" class="reseña-col">
+        <app-review-carousel [resenas]="resenasClientes"></app-review-carousel>
+      </ion-col>
+    </ion-row>
+    
+  </ion-grid>
+  
 
   <!-- Footer -->
   <app-footer></app-footer>

@@ -1,0 +1,28 @@
+    .section-title {
+    --background: transparent;
+    background: linear-gradient(
+      90deg,
+      rgba(46, 105, 161, 1) 0%,
+      rgba(17, 38, 59, 1) 25%
+    );
+    display: flex;
+    align-items: center;       // centra verticalmente
+    justify-content: flex-start; // alinea el contenido a la izquierda
+    min-height: 121px;          // puedes ajustar el alto total del banner
+    padding-left: 20px;        // margen izquierdo si necesitas espacio desde el borde
+
+    ion-label {
+        h2 {
+            font-family: 'Inter-SemiBold', Helvetica;
+            font-size: 48px;
+            line-height: normal;
+            font-weight: 600;
+            color: hsl(0, 0%, 100%);
+            margin: 0;
+            position: relative;
+            display: inline-block;
+            letter-spacing: -0.46px;
+        }
+    }
+  }
+  

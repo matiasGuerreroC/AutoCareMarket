@@ -1,0 +1,23 @@
+<swiper-container class="reviews-swiper custom-swiper" init="false">
+  <swiper-slide *ngFor="let review of resenas">
+    <ion-card class="review-card">
+      <ion-card-header>
+        <p class="comentario">“{{ review.comentario }}”</p>
+      </ion-card-header>
+      <ion-card-content>
+        <p class="estrellas">
+          <ng-container *ngFor="let _ of [].constructor(review.estrellas)">
+            ⭐
+          </ng-container>
+        </p>
+        <ion-card-title>
+          <!--Imagen de Usuario en un circulo-->
+          <ion-avatar class="avatar">
+            <img [src]="review.imagen" alt="Foto de {{ review.nombre }}" />
+          </ion-avatar>
+          {{ review.nombre }}
+        </ion-card-title>
+      </ion-card-content>
+    </ion-card>
+  </swiper-slide>
+</swiper-container>

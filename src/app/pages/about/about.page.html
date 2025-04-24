@@ -1,12 +1,87 @@
 <app-header></app-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">About</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- Bloque de presentación -->
+  <ion-grid class="about-section">
+    <ion-row class="about-row">
+      <ion-col size="12" size-md="6" class="about-col">
+        <h1 class="title">Sobre Nosotros</h1>
+        <p class="subtitle">Descubre quiénes somos y por qué amamos cuidar tu vehículo.</p>
+        <p class="description">
+          AutoCare Market nace con la misión de facilitar el acceso a productos especializados para el cuidado de automóviles, conectando a entusiastas y profesionales del mundo automotor con un Marketplace confiable, moderno y fácil de usar.<br /><br />
+
+          En esta sección, podrás conocer más sobre nuestro equipo, nuestros valores y el compromiso que tenemos con la calidad del servicio y la satisfacción de nuestros clientes.<br /><br />
+
+          También encontrarás nuestros datos de contacto, redes sociales y un formulario para comunicarte con nosotros ante cualquier consulta, sugerencia o solicitud de soporte.<br /><br />
+        </p>
+      </ion-col>
+
+      <ion-col size="12" size-md="6" class="logo-col">
+        <img src="assets/logo_vertical.png" alt="AutoCare Market" class="logo-about" />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Bloque de contacto -->
+  <ion-grid class="contact-section">
+    <ion-row>
+      <!-- Información de contacto -->
+      <ion-col size="4" class="info-col">
+        <ion-card>
+          <ion-card-content>
+            <h4><ion-icon name="call-outline"></ion-icon> <strong>Llámanos</strong></h4>
+            <p>Estamos disponibles 24/7, los 7 días de la semana.</p>
+            <strong>Teléfono:</strong> +8801611112222
+  
+            <hr />
+  
+            <h4><ion-icon name="mail-outline"></ion-icon> <strong>Escríbenos</strong></h4>
+            <p>Completa nuestro formulario y te contactaremos en menos de 24 horas.</p>
+            <strong>Correos:</strong><br />
+            customer&#64;exclusive.com<br />
+            support&#64;exclusive.com
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+  
+      <!-- Formulario de contacto -->
+      <ion-col size="8" class="form-col">
+        <h3 class="form-title"><strong>Contáctanos</strong></h3>
+        <form>
+          <ion-row class="no-padding">
+            <ion-col size="6">
+              <label>Nombre</label>
+              <ion-input fill="outline" placeholder="Juan"></ion-input>
+            </ion-col>
+            <ion-col size="6">
+              <label>Apellido</label>
+              <ion-input fill="outline" placeholder="Pérez"></ion-input>
+            </ion-col>
+          </ion-row>
+          
+          <ion-row>
+            <ion-col size="12">
+              <label>Correo electrónico</label>
+              <ion-input fill="outline" placeholder="juan.perez@email.com"></ion-input>
+            </ion-col>
+          </ion-row>
+          
+          <ion-row>
+            <ion-col size="12">
+              <label>Mensaje</label>
+              <ion-textarea fill="outline" placeholder="Ingresa tu consulta o mensaje"></ion-textarea>
+            </ion-col>
+          </ion-row>
+          
+          <ion-row>
+            <ion-col size="12">
+              <ion-button expand="block" color="primary" (click)="onSubmit()">Enviar</ion-button>
+            </ion-col>
+          </ion-row>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>  
 
   <app-footer></app-footer>
-
 </ion-content>
