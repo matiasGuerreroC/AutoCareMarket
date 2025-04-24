@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #DEEEFF; /* Fondo de la página */
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 1rem 2rem;
+  border-bottom: 2px solid #e0e0e0;
+
+  .logo {
+    height: 40px;
+  }
+
+  .back-link {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+}
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Alinea el contenido hacia arriba */
+  padding: 2rem;
+  min-height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+  background-color: #DEEEFF; /* Fondo de la página */
+  overflow: auto; /* Permite desplazamiento si el contenido es demasiado grande */
+  position: relative; /* Necesario para posicionar elementos internos */
+}
+
+.register-box {
+  background-color: #EAF4FB; /* Fondo del marco */
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: visible; /* Asegúrate de que no oculte contenido */
+  margin-bottom: 4rem; /* Espacio adicional para que la línea no quede pegada al contenido */
+
+  h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .input-group {
+      display: flex;
+      flex-direction: column; /* Asegura que el label esté encima del input */
+      gap: 0.5rem; /* Espaciado entre el label y el input */
+      margin-bottom: 1rem;
+
+      input {
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #D0E4F5; /* Fondo de los inputs */
+        width: 100%; /* Asegura que el input ocupe todo el ancho disponible */
+        box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+      }
+
+      small {
+        font-size: 0.75rem;
+        color: #555;
+      }
+
+      label {
+        font-weight: bold;
+        font-size: 0.9rem;
+        color: #333;
+        width: 100%; /* Asegura que el label ocupe todo el ancho del contenedor */
+        text-align: left; /* Alinea el texto del label a la izquierda */
+      }
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 0.75rem;
+      background-color: #60a5fa;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #3b82f6;
+      }
+    }
+  }
+}
+
+/* Línea decorativa fija en el fondo */
+.linea-decorativa {
+  position: fixed; /* Fija la línea al fondo de la ventana */
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Ocupa todo el ancho de la página */
+  height: 20px; /* Altura de la línea */
+  background: linear-gradient(90deg, #2E69A1 0%, #11263B 100%); /* Gradiente de la línea */
+  z-index: 10; /* Asegura que la línea esté por encima de otros elementos */
+}
+
+ion-content {
+  --background: #DEEEFF; /* Fondo del ion-content */
+}

@@ -1,0 +1,68 @@
+.auth-bg {
+  --background: #0f172a;
+  color: rgb(43, 18, 18);
+}
+
+.login-container {
+  background-color: #1e293b;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  color: #1C2B3A;
+}
+
+
+
+.title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: white; // Agregado
+}
+
+.password-options {
+  text-align: right;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.password-options a {
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+.login-btn {
+  background: linear-gradient(90deg, #3b82f6, #6366f1);
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.divider {
+  text-align: center;
+  margin: 1.5rem 0 1rem;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.social-btn {
+  flex: 1;
+  color: white;
+}
+
+.label-error {
+  color: #ef4444 !important; // rojo elegante
+}
+
+.label-normal {
+  color: white !important;
+}

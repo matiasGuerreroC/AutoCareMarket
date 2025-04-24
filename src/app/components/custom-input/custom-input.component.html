@@ -1,0 +1,18 @@
+<div class="custom-input-container">
+  <label [ngClass]="control.invalid && control.touched ? 'label-error' : 'label-normal'">    
+  {{ label }}
+  </label>
+
+  <ion-item class="custom-input" lines="none">
+    <ion-input 
+      [type]="hide ? 'password' : 'text'" 
+      [formControl]="control"
+      [autocomplete]="autocomplete"
+      color="custom-input"
+    ></ion-input>
+
+    <ion-button *ngIf="isPassword" (click)="showPassword()" slot="end" fill="clear" shape="round">
+      <ion-icon slot="icon-only" [name]="hide ? 'eye-outline' : 'eye-off-outline'"></ion-icon>
+    </ion-button>
+  </ion-item>
+</div>
