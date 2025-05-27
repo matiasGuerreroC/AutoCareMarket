@@ -1,3 +1,22 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+
+  <!-- Menú lateral -->
+  <ion-menu contentId="main-content" side="end" menuId="first" type="overlay">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item routerLink="/home" (click)="cerrarMenu()">Inicio</ion-item>
+        <ion-item>Productos</ion-item>
+        <ion-item>Categorías</ion-item>
+        <ion-item routerLink="/about" (click)="cerrarMenu()">Sobre Nosotros</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+
 </ion-app>
