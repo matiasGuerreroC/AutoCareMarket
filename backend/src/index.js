@@ -9,12 +9,19 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// Ruta base
+// Ruta base 
 app.get('/', (req, res) => {
   res.send('AutoCare Market API funcionando');
 });
 
-// Iniciar servidor
+// Rutas
+const productosRouter = require('./routes/productos');
+const resenasRouter = require('./routes/resenas');
+
+app.use('/api', productosRouter);
+app.use('/api', resenasRouter);
+
+// Inicio del servidor
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
