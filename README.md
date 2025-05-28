@@ -32,10 +32,15 @@ Marketplace de productos para el cuidado de automóviles, desarrollado como part
 
 ## Tecnologías
 
-- **Frontend:** Ionic + Angular  
-- **Lenguaje:** TypeScript  
-- **Estilos:** CSS (con Ionic Components)  
-- **Control de versiones:** Git + GitHub  
+* **Frontend:** Ionic + Angular
+* **Backend:** Node.js + Express
+* **Lenguajes:** TypeScript (frontend) y JavaScript (backend)
+* **Estilos:** SCSS (con Ionic Components)
+* **Control de versiones:** Git + GitHub
+* **Herramientas adicionales:**
+
+  * `HttpClient` para consumo de APIs desde el frontend
+  * `dotenv` y `cors` para configuración y seguridad en el backend
 
 ## Requerimientos
 
@@ -120,38 +125,52 @@ AutoCare Market implementa una navegación basada en un header superior visible 
 
 ```bash
 AutoCareMarket/
-├── src/
-│   ├── app/
-│   │   └── pages/          # Páginas de la aplicación
-│   │       ├── home/       # Página de inicio
-│   │       ├── login/      # Página de inicio de sesión
-│   │       ├── register/   # Página de registro
-│   │       └── about/      # Página "Sobre Nosotros"
-│   │
-│   │   └── components/     # Componentes reutilizables
-│   │       ├── header/     # Componente de encabezado
-│   │       └── footer/     # Componente de pie de página
-│   │       └── custom-input/ # Componente de entrada personalizada
-│   │       └── product-carousel/ # Componente de carrusel de productos
-│   │       └── review-carousel/ # Componente de carrusel de reseñas
-│   │       └── section-title/ # Componente de título de sección
-│   │
-│   │   └── shared/        # Servicios y utilidades compartidas
-│   ├── assets/
-│   ├── environments/
-│   └── theme/
-├── README.md
-├── package.json
-└── ionic.config.json
+├── frontend/                         # Proyecto frontend con Ionic + Angular
+│   ├── src/
+│   │   ├── app/
+│   │   │   └── pages/                # Páginas de la aplicación
+│   │   │       ├── home/            # Página de inicio
+│   │   │       ├── login/           # Página de inicio de sesión
+│   │   │       ├── register/        # Página de registro
+│   │   │       └── about/           # Página "Sobre Nosotros"
+│   │   │
+│   │   │   └── components/          # Componentes reutilizables
+│   │   │       ├── header/          # Componente de encabezado
+│   │   │       ├── footer/          # Componente de pie de página
+│   │   │       ├── custom-input/    # Componente de entrada personalizada
+│   │   │       ├── product-carousel/ # Carrusel de productos
+│   │   │       ├── review-carousel/  # Carrusel de reseñas
+│   │   │       └── section-title/    # Título de sección estilizado
+│   │   │
+│   │   └── shared/                  # Servicios y utilidades compartidas
+│   ├── assets/                      # Imágenes y recursos estáticos
+│   ├── environments/               # Configuración de entornos
+│   └── theme/                      # Estilos globales
+│   ├── package.json
+│   └── ionic.config.json
+│
+├── backend/                         # Proyecto backend con Node.js + Express
+│   ├── src/
+│   │   ├── index.js                # Punto de entrada del servidor
+│   │   ├── app.js                  # Configuración principal de Express
+│   │   ├── routes/                 # Rutas de la API (productos, reseñas, etc.)
+│   │   └── data/                   # Datos simulados (mock data)
+│   ├── .env                        # Variables de entorno
+│   ├── package.json
+│   └── .gitignore
+│
+├── otros/                           # Recursos adicionales (mockups, diagramas, etc.)
+└── README.md
 ```
 
 ## Instrucciones para correr el proyecto
 
-1. Clonar el repositorio:
+### Frontend (Ionic + Angular)
+
+1. Ir a la carpeta del frontend:
 
 ```bash
-git clone https://github.com/<usuario>/<repositorio>.git
-cd AutoCareMarket
+cd frontend
 ```
 
 2. Instalar dependencias:
@@ -166,13 +185,41 @@ npm install
 ionic serve
 ```
 
-Esto abrirá la aplicación en el navegador (`http://localhost:8100`).
+### Backend (Node.js + Express)
+
+1. Ir a la carpeta del backend:
+
+```bash
+cd backend
+```
+
+2. Instalar dependencias:
+
+```bash
+npm install
+```
+
+3. Ejecutar el servidor:
+
+```bash
+npm run dev
+```
+
+El servidor estará disponible en `http://localhost:3000`.
+
+---
 
 ## Estado actual del proyecto
 
-**Estado del Proyecto:**
-Entrega Parcial 1 finalizada. Se completaron los siguientes puntos:
+**Entrega Parcial 1 finalizada:**
 
-- ✅ EP 1.1 a EP 1.6 implementados.
-- ✅ EP 1.7: Se desarrollaron las vistas principales: Home, About, Login y Register.
-- ✅ EP 1.8: Se integraron componentes reutilizables con Ionic para mejorar la interfaz.
+* ✅ EP 1.1 a EP 1.8 implementados
+* ✅ Vistas desarrolladas: Home, About, Login y Register
+* ✅ Componentes reutilizables implementados y estilos adaptados
+
+**Entrega Parcial 2 en desarrollo:**
+
+* ✅ EP 2.1: Creación del servidor backend con Node.js y Express
+* ✅ EP 2.3: Desarrollo de API REST con endpoints básicos (productos y reseñas)
+* ✅ EP 2.4: Consumo de API desde el frontend utilizando HttpClient
+* ⏳ EP 2.2, 2.5 y 2.6 en desarrollo.
