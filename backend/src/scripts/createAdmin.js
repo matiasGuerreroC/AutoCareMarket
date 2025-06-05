@@ -1,14 +1,14 @@
 // backend/scripts/createAdmin.js
 require('dotenv').config({ path: '../.env' }); // Cargar variables de entorno desde el .env raíz del backend
 
-const connectDB = require('../config/db'); // Usa tu función de conexión centralizada
+const connectDB = require('../config/db'); 
 const mongoose = require('mongoose');
 const User = require('../models/user'); // Importa tu modelo de usuario
 
 // --- CONFIGURACIÓN DEL NUEVO ADMINISTRADOR ---
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME || 'admin';
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@example.com';
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'Password123'; // ¡CAMBIA ESTO POR UNA CONTRASEÑA SEGURA EN .env!
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'Password123'; 
 // ------------------------------------------
 
 async function createAdminUser() {
