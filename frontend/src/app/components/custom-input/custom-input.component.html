@@ -1,18 +1,26 @@
 <div class="custom-input-container">
-  <label [ngClass]="control.invalid && control.touched ? 'label-error' : 'label-normal'">    
-  {{ label }}
+  <label class="input-label" [ngClass]="{ 'label-error': control.invalid && control.touched }">
+    {{ label }}
   </label>
 
   <ion-item class="custom-input" lines="none">
+    <ion-icon *ngIf="icon" [name]="icon" slot="start" class="input-icon"></ion-icon>
+
     <ion-input 
-      [type]="hide ? 'password' : 'text'" 
+      [type]="isPassword && hide ? 'password' : 'text'" 
       [formControl]="control"
       [autocomplete]="autocomplete"
-      color="custom-input"
+      class="input-field"
     ></ion-input>
 
-    <ion-button *ngIf="isPassword" (click)="showPassword()" slot="end" fill="clear" shape="round">
+    <!-- Botón de mostrar/ocultar contraseña -->
+    <ion-button *ngIf="isPassword" (click)="togglePasswordVisibility()" slot="end" fill="clear">
       <ion-icon slot="icon-only" [name]="hide ? 'eye-outline' : 'eye-off-outline'"></ion-icon>
     </ion-button>
   </ion-item>
+
+  <ion-text color="danger" *ngIf="control.invalid && control.touched">
+    <small *ngIf="control.errors?.['required']">{{ label }} es obligatorio</small>
+    <small *ngIf="control.errors?.['email']">Correo inválido</small>
+  </ion-text>
 </div>

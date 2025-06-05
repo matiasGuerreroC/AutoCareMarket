@@ -1,25 +1,42 @@
-.label-normal {
+.custom-input-container {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-label {
   color: white;
+  font-size: 14px;
   margin-bottom: 4px;
-  font-size: 0.9rem;
 }
 
 .label-error {
-  color: red;
-  margin-bottom: 4px;
-  font-size: 0.9rem;
+  color: #ff4d4f;
 }
 
-.custom-input-container {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
-  
-}
 .custom-input {
-  display: flex;
-  align-items: center; /* Asegura que los elementos estén alineados verticalmente */
-  border-radius: 8px; /* Bordes redondeados */
-  background-color: #1e293b; /* Fondo del input */
-  padding: 8px; /* Espaciado interno */
+  --background: #ffffff;
+  --color: #000000;
+  border-radius: 10px;
+  padding: 8px;
+  align-items: center;
+}
+
+.input-icon {
+  color: #555;
+}
+
+.input-field {
+  width: 100%;
+  color: #000;
+}
+
+ion-button {
+  --padding-start: 0;
+  --padding-end: 0;
+  --color: #333;
+}
+
+ion-text small {
+  font-size: 12px;
 }

@@ -1,49 +1,40 @@
-<app-header></app-header>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registrarse</ion-title>
+  </ion-toolbar>
+</ion-header>
 
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-input label="Nombre" type="text" placeholder="Ingrese nombre" [(ngModel)]="firstName" name="firstName" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Apellidos" type="text" placeholder="Ingrese apellidos" [(ngModel)]="lastName" name="lastName" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Nombre de Usuario" type="text" placeholder="Tu nombre de usuario" [(ngModel)]="username" name="username" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Email" type="email" placeholder="tu@email.com" [(ngModel)]="email" name="email" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Contraseña" type="password" placeholder="Ingresar contraseña" [(ngModel)]="password" name="password" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Tipo de documento" type="text" placeholder="RUT" [(ngModel)]="documentType" name="documentType" value="RUT" readonly></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Número de Documento" type="text" placeholder="Ingrese RUT sin puntos ni guion" [(ngModel)]="documentNumber" name="documentNumber"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Teléfono" type="tel" placeholder="+56 Ingrese nro de Celular" [(ngModel)]="phone" name="phone" required></ion-input>
+  </ion-item>
+  <ion-button expand="block" class="ion-margin-top" (click)="register()">
+    Crear Cuenta
+  </ion-button>
 
-
-  <main class="register-container">
-    <section class="register-box">
-
-      <h2>¿Aún no estás registrado?</h2>
-
-      <form>
-
-        <div class="input-group">
-          <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" placeholder="Ingrese nombre" required>
-        </div>
-
-        <div class="input-group">
-          <label for="apellidos">Apellidos</label>
-          <input type="text" id="apellidos" placeholder="Ingrese apellidos" required>
-        </div>
-
-        <div class="input-group">
-          <label for="doc">Tipo de documento</label>
-          <input type="text" id="doc" placeholder="RUT" required>
-        </div>
-
-        <div class="input-group">
-          <label for="telefono">Teléfono</label>
-          <input type="tel" id="telefono" placeholder="+56 Ingrese nro de Celular" required>
-        </div>
-
-        <div class="input-group">
-          <label for="correo">Correo</label>
-          <input type="email" id="correo" placeholder="Ingrese correo" required>
-        </div>
-
-        <div class="input-group">
-          <label for="password">Contraseña</label>
-          <input type="password" id="password" placeholder="Ingresar contraseña" required>
-          <small>Debe contener al menos 6 caracteres, una mayúscula, una minúscula y un símbolo.</small>
-        </div>
-
-        <!-- Botón de registrar -->
-        <button type="submit" class="register-btn">Registrarme</button>
-        
-      </form>
-    </section>
-  </main>
+  <p class="ion-text-center ion-margin-top">
+    ¿Ya tienes una cuenta? <a routerLink="/login">Inicia Sesión aquí</a>
+  </p>
+</ion-content>
 

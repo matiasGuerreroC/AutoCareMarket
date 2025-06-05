@@ -18,10 +18,25 @@ app.get('/', (req, res) => {
 const productosRouter = require('./routes/productos');
 const resenasRouter = require('./routes/resenas');
 
+// NUEVAS RUTAS DE AUTENTICACIÓN
+const authRouter = require('./routes/auth'); // <-- Importa el router de autenticación
+
+const connectDB = require('./config/db');
+
 app.use('/api', productosRouter);
 app.use('/api', resenasRouter);
+app.use('/api/auth', authRouter); // <-- Usa el router de autenticación bajo /api/auth
 
-// Inicio del servidor
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
-});
+
+// Conectar a la base de datos y luego iniciar el servidor
+connectDB()
+  .then(() => {
+    console.log('Conexión a la base de datos exitosa');
+    app.listen(PORT, () => {
+      console.log(`Servidor corriendo en http://localhost:${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error('Error al conectar a la base de datos:', err);
+    process.exit(1);
+  });

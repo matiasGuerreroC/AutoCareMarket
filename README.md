@@ -197,6 +197,16 @@ cd backend
 
 ```bash
 npm install
+npm install mongoose
+npm install mongodb
+npm install jsonwebtoken bcryptjs
+npm install typescript ts-node @types/node @types/express @types/mongoose @types/cors @types/jsonwebtoken @types/bcryptjs dotenv
+npm install express mongoose cors jsonwebtoken bcryptjs dotenv
+npm install @capacitor/preferences
+npx cap sync
+
+
+
 ```
 
 3. Ejecutar el servidor:
@@ -208,6 +218,16 @@ npm run dev
 El servidor estará disponible en `http://localhost:3000`.
 
 ---
+Script para el crear el usuario administrador node .\src\scripts\createAdmin.js
+
+
+descargar mongooCompass y usar la linea 
+
+mongodb+srv://autocaremarket:<db_password>@cluster0.lspkv7l.mongodb.net/
+cambiar db_password por:Lm1PXiVsfCuyMjin para revisar que la base de datos este bien
+
+usuario: admin@example.com
+contraseña: Password123
 
 ## Estado actual del proyecto
 

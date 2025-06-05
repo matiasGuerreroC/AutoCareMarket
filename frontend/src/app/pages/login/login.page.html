@@ -12,12 +12,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding auth-bg">
+<ion-content class="ion-padding auth-bg"  >
   <div class="login-container">
     
     <h1 class="title">Bienvenido de vuelta</h1>
 
-    <form [formGroup]="form">
+    <form [formGroup]="form" (ngSubmit)="submit()">
 
       <app-custom-input 
         icon="mail-outline"
@@ -26,7 +26,6 @@
         type="email"
         label="Correo"
       ></app-custom-input>
-      
 
       <app-custom-input 
         icon="lock-closed-outline"
@@ -35,11 +34,11 @@
         label="Contraseña"
       ></app-custom-input> 
 
-      <div  class="password-options" routerLink="/forgot-password" routerLinkActive="router-link-active" >
+      <div class="password-options" routerLink="/forgot-password" routerLinkActive="router-link-active">
         <a href="#">¿Has olvidado tu contraseña?</a>
       </div>
 
-      <ion-button expand="block" class="login-btn">Iniciar sesión</ion-button>
+      <ion-button expand="block" class="login-btn" type="submit">Iniciar sesión</ion-button>
 
       <div class="divider">
         <span>O inicia sesión con</span>
