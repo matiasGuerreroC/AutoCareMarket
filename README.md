@@ -4,22 +4,30 @@ Marketplace de productos para el cuidado de automóviles, desarrollado como part
 
 ## Tabla de contenidos
 
-1. [Descripción](#descripción)
-2. [Integrantes](#integrantes)
-3. [Tecnologías](#tecnologías)
-4. [Requerimientos](#requerimientos)
-   - [Roles del Sistema](#roles-del-sistema)
-   - [Requisitos Funcionales](#requisitos-funcionales)
-   - [Requisitos No Funcionales](#requisitos-no-funcionales)
-5. [Prototipo UI/UX](#prototipo-uiux)
-6. [Definición de la Navegación y Experiencia de Usuario (UX)](#definición-de-la-navegación-y-experiencia-de-usuario-ux)
-   - [Navegación General](#navegación-general)
-   - [Flujo del Usuario](#flujo-del-usuario)
-   - [Principios de UX aplicados](#principios-de-ux-aplicados)
-7. [Componentes reutilizables implementados](#componentes-reutilizables-implementados)
-8. [Estructura inicial del proyecto](#estructura-inicial-del-proyecto)
-9. [Instrucciones para correr el proyecto](#instrucciones-para-correr-el-proyecto)
-10. [Estado actual del proyecto](#estado-actual-del-proyecto)
+1. [Descripción](#descripción)  
+2. [Integrantes](#integrantes)  
+3. [Tecnologías](#tecnologías)  
+4. [Entrega Parcial 1](#entrega-parcial-1)  
+   - [Requerimientos](#requerimientos)  
+     - [Roles del Sistema](#roles-del-sistema)  
+     - [Requisitos Funcionales](#requisitos-funcionales)  
+     - [Requisitos No Funcionales](#requisitos-no-funcionales)  
+   - [Prototipo UI/UX](#prototipo-uiux)  
+   - [Definición de la Navegación y Experiencia de Usuario (UX)](#definición-de-la-navegación-y-experiencia-de-usuario-ux)  
+     - [Navegación General](#navegación-general)  
+     - [Flujo del Usuario](#flujo-del-usuario)  
+     - [Principios de UX aplicados](#principios-de-ux-aplicados)  
+   - [Componentes reutilizables implementados](#componentes-reutilizables-implementados)  
+
+5. [Entrega Parcial 2](#entrega-parcial-2)  
+   - [Backend y API REST (Node.js + Express + MongoDB)](#backend-y-api-rest-nodejs--express--mongodb)  
+   - [Scripts y modelos](#scripts-y-modelos)  
+   - [Autenticación y Sesiones](#autenticación-y-sesiones)  
+   - [Integración frontend + backend](#integración-frontend--backend)  
+
+6. [Estructura del proyecto](#estructura-del-proyecto)  
+7. [Instrucciones para correr el proyecto](#instrucciones-para-correr-el-proyecto)  
+8. [Estado actual del proyecto](#estado-actual-del-proyecto) 
 
 ## Descripción
 
@@ -33,22 +41,27 @@ Marketplace de productos para el cuidado de automóviles, desarrollado como part
 ## Tecnologías
 
 * **Frontend:** Ionic + Angular
-* **Backend:** Node.js + Express
+* **Backend:** Node.js + Express + MongoDB 
 * **Lenguajes:** TypeScript (frontend) y JavaScript (backend)
 * **Estilos:** SCSS (con Ionic Components)
+* **Base de datos:** MongoDB Atlas con Mongoose  
+* **Autenticación:** JWT (JSON Web Tokens)  
 * **Control de versiones:** Git + GitHub
 * **Herramientas adicionales:**
 
   * `HttpClient` para consumo de APIs desde el frontend
   * `dotenv` y `cors` para configuración y seguridad en el backend
+  * `bcryptjs` para hashing de contraseñas
+ 
+## Entrega Parcial 1:
 
-## Requerimientos
+### Requerimientos
 
-### Roles del Sistema
+#### Roles del Sistema
 - **Usuario (ROL-USR):** El usuario es la persona que navega por el catálogo de productos, realiza búsquedas, gestiona su carrito de compras y completa pedidos. También puede dejar reseñas sobre los productos adquiridos. Su experiencia se centra en la exploración fluida de productos, una interfaz atractiva y una navegación optimizada tanto en dispositivos móviles como de escritorio.
 - **Administrador (ROL-ADM):** El administrador tiene acceso a un panel especializado desde el cual puede realizar operaciones de gestión del catálogo (añadir, editar, eliminar productos), controlar el stock, y administrar pedidos realizados por los usuarios. Además, puede revisar reseñas de productos y monitorear el funcionamiento general de la plataforma.
 
-### Requisitos Funcionales
+#### Requisitos Funcionales
 - RF-01-USR: Visualización del catálogo de productos categorizados (ej. limpieza, herramientas, accesorios).
 - RF-02-USR: Búsqueda de productos por nombre, categoría o palabra clave, y filtrado por precio o disponibilidad.
 - RF-03-USR: Gestión del carrito de compras: añadir, eliminar productos y visualizar resumen.
@@ -59,7 +72,7 @@ Marketplace de productos para el cuidado de automóviles, desarrollado como part
 - RF-08-ADM: CRUD de productos: creación, edición, eliminación y listado de productos con sus detalles.
 - RF-09-ADM: Gestión de pedidos realizados por usuarios, con opción de cambiar estado del pedido.
 
-### Requisitos No Funcionales
+#### Requisitos No Funcionales
 - RNF-01: La aplicación debe ser completamente responsiva para funcionar correctamente en dispositivos móviles y escritorio.
 - RNF-02: El sistema debe estar estructurado de forma modular, permitiendo escalabilidad y mantenimiento eficiente del código.
 - RNF-03: El proyecto debe estar correctamente documentado y versionado en GitHub, incluyendo uso de Issues, Pull Requests y ramas.
@@ -68,12 +81,12 @@ Marketplace de productos para el cuidado de automóviles, desarrollado como part
 - RNF-06: La arquitectura del sistema debe permitir escalabilidad e integración con futuras funcionalidades (ej. pasarela de pagos).
 - RNF-07: La experiencia de usuario debe ser clara, intuitiva y accesible para todos los perfiles.
 
-## Prototipo UI/UX
+### Prototipo UI/UX
 El prototipo de la aplicación, incluyendo los mockups de las pantallas principales y los formularios de inicio de sesión y registro, está disponible en Figma: [Enlace al prototipo](https://www.figma.com/design/SO7kOEef8SZwnbPXQBWL5j/AutoCare-Market---Prototipo-UI?node-id=27-351&t=zjivsVNCvianOUnj-1).
 
-## Definición de la Navegación y Experiencia de Usuario (UX)
+### Definición de la Navegación y Experiencia de Usuario (UX)
 
-### Navegación General
+#### Navegación General
 AutoCare Market implementa una navegación basada en un header superior visible tanto en versión móvil como escritorio, con acceso directo a las secciones principales de la aplicación. Este header es un componente reutilizable (`HeaderComponent`), ya implementado en las vistas **home** y **about**, y se integrará en el resto de las páginas.
 
 **Pantallas creadas hasta ahora:**
@@ -90,7 +103,7 @@ AutoCare Market implementa una navegación basada en un header superior visible 
 - Carrito
 - Iniciar Sesión
 
-### Flujo del Usuario
+#### Flujo del Usuario
 
 **Usuario nuevo:**
 1. Abre la app y visualiza la pantalla de inicio.
@@ -105,14 +118,14 @@ AutoCare Market implementa una navegación basada en un header superior visible 
 3. Agrega productos a favoritos para comprarlos después.
 4. Accede a la sección "Sobre Nosotros" para información adicional.
 
-### Principios de UX aplicados
+#### Principios de UX aplicados
 - **Accesibilidad:** Interfaz limpia y botones grandes para facilitar la navegación móvil.
 - **Consistencia visual:** Uso de componentes de Ionic para mantener coherencia entre las vistas.
 - **Feedback inmediato:** Confirmaciones visuales al interactuar con productos, compras o formularios.
 - **Minimalismo:** Diseño claro que evita la sobrecarga de información en pantalla.
 - **Reducción de fricción:** El usuario puede navegar libremente por el contenido sin necesidad de estar registrado, salvo al momento de realizar una compra.
 
-## Componentes reutilizables implementados
+### Componentes reutilizables implementados
 
 - **HeaderComponent:** Barra de navegación con logo, búsqueda, menú y botones dinámicos según sesión.
 - **FooterComponent:** Pie de página con enlaces útiles y redes sociales.
@@ -121,7 +134,57 @@ AutoCare Market implementa una navegación basada en un header superior visible 
 - **ReviewCarouselComponent:** Carrusel con reseñas de usuarios, avatar e iconos de estrella.
 - **CustomInputComponent:** Campo de entrada reutilizable con estilos personalizados, validación visual y soporte para mostrar/ocultar contraseñas. Actualmente utilizado en la vista de Login.
 
-## Estructura inicial del proyecto
+## Entrega Parcial 2
+
+### Backend y API REST (Node.js + Express + MongoDB)
+
+* Se creó el servidor Express (`backend/src/index.js`).
+* Se configuró la conexión a la Base de Datos con MongoDB Atlas usando Mongoose.
+* Se implementaron modelos (`User`, `Producto`, `Reseña`) con validaciones.
+* Se crearon rutas RESTful para:
+
+  * `/api/productos-destacados`
+  * `/api/resenas`
+  * `/api/auth/register`
+  * `/api/auth/login`
+ 
+* Endpoints disponibles:
+
+  * `POST /api/auth/register`
+  * `POST /api/auth/login`
+  * `GET /api/productos-destacados`
+  * `GET /api/resenas`
+
+#### Scripts y modelos
+
+* Script para crear un administrador inicial: `src/scripts/createAdmin.js`
+* Script de carga de datos mock: `src/scripts/seedData.js`
+* Modelos definidos:
+
+  * `User`
+  * `Producto`
+  * `Resena`
+
+### Autenticación y Sesiones
+
+- Registro de usuarios con validaciones completas.
+- Inicio de sesión con generación de token JWT.
+- Los tokens se almacenan en el navegador del usuario (localStorage).
+- Se usó bcryptjs para proteger contraseñas.
+- Visualización dinámica del estado de sesión en el `HeaderComponent`:
+  - Si el usuario está autenticado: muestra nombre y botón de logout.
+  - Si no está autenticado: muestra botón "Iniciar Sesión".
+
+### Integración frontend + backend
+
+* Se consumen productos y reseñas reales desde el backend.
+* `AuthService` y `HttpClient` integrados.
+* Datos dinámicos cargados desde la API.
+* Variables de entorno (`environment.ts`) con `apiUrl`.
+* Se implementó `AuthService` en Angular para login y registro.
+* El estado de sesión se refleja en el `HeaderComponent` (nombre del usuario logueado).
+
+## Estructura del proyecto
 
 ```bash
 AutoCareMarket/
@@ -153,17 +216,49 @@ AutoCareMarket/
 │   ├── src/
 │   │   ├── index.js                # Punto de entrada del servidor
 │   │   ├── app.js                  # Configuración principal de Express
-│   │   ├── routes/                 # Rutas de la API (productos, reseñas, etc.)
-│   │   └── data/                   # Datos simulados (mock data)
+│   │   ├── config/                 # Configuración de conexión a la base de datos
+│   │   ├── routes/                 # Rutas de la API (productos, reseñas, autenticación)
+│   │   ├── models/                 # Modelos de datos Mongoose (Usuario, Producto, Reseña)
+│   │   ├── scripts/                # Scripts para crear admin o insertar datos
 │   ├── .env                        # Variables de entorno
 │   ├── package.json
 │   └── .gitignore
+
 │
 ├── otros/                           # Recursos adicionales (mockups, diagramas, etc.)
 └── README.md
 ```
 
 ## Instrucciones para correr el proyecto
+
+### Requisitos previos
+
+- Node.js y npm instalados
+- Ionic CLI instalado globalmente (`npm install -g @ionic/cli`)
+
+### Backend (Node.js + Express)
+
+1. Ir a la carpeta del backend:
+
+```bash
+cd backend
+```
+
+2. Instalar dependencias:
+
+```bash
+npm install
+```
+
+3. Ejecutar el servidor:
+
+```bash
+npm run dev
+```
+
+El servidor estará disponible en `http://localhost:3000`.
+
+---
 
 ### Frontend (Ionic + Angular)
 
@@ -185,49 +280,18 @@ npm install
 ionic serve
 ```
 
-### Backend (Node.js + Express)
-
-1. Ir a la carpeta del backend:
+### Accesos de prueba (admin)
 
 ```bash
-cd backend
+Email:    admin@example.com
+Password: Password123
 ```
 
-2. Instalar dependencias:
+Puedes usar MongoDB Compass para ver los datos de la base:
 
 ```bash
-npm install
-npm install mongoose
-npm install mongodb
-npm install jsonwebtoken bcryptjs
-npm install typescript ts-node @types/node @types/express @types/mongoose @types/cors @types/jsonwebtoken @types/bcryptjs dotenv
-npm install express mongoose cors jsonwebtoken bcryptjs dotenv
-npm install @capacitor/preferences
-npx cap sync
-
-
-
+mongodb+srv://autocaremarket:<password>@cluster0.lspkv7l.mongodb.net/
 ```
-
-3. Ejecutar el servidor:
-
-```bash
-npm run dev
-```
-
-El servidor estará disponible en `http://localhost:3000`.
-
----
-Script para el crear el usuario administrador node .\src\scripts\createAdmin.js
-
-
-descargar mongooCompass y usar la linea 
-
-mongodb+srv://autocaremarket:<db_password>@cluster0.lspkv7l.mongodb.net/
-cambiar db_password por:Lm1PXiVsfCuyMjin para revisar que la base de datos este bien
-
-usuario: admin@example.com
-contraseña: Password123
 
 ## Estado actual del proyecto
 
@@ -237,9 +301,11 @@ contraseña: Password123
 * ✅ Vistas desarrolladas: Home, About, Login y Register
 * ✅ Componentes reutilizables implementados y estilos adaptados
 
-**Entrega Parcial 2 en desarrollo:**
+**Entrega Parcial 2 finalizada:**
 
 * ✅ EP 2.1: Creación del servidor backend con Node.js y Express
+* ✅ EP 2.2: Configuración y modelado con MongoDB Atlas + Mongoose
 * ✅ EP 2.3: Desarrollo de API REST con endpoints básicos (productos y reseñas)
 * ✅ EP 2.4: Consumo de API desde el frontend utilizando HttpClient
-* ⏳ EP 2.2, 2.5 y 2.6 en desarrollo.
+* ✅ EP 2.5: Autenticación con JWT (registro e inicio de sesión)
+* ✅ EP 2.6: Validación de usuarios, sesiones y visualización dinámica en la UI
