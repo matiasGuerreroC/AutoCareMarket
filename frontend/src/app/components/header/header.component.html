@@ -11,21 +11,27 @@
           </a>
         </ion-col>
 
-        <!-- Columna móvil: hamburguesa + carrito + login -->
+        <!-- Botones en modo móvil -->
         <ion-col size="6" size-md="2" class="ion-text-end ion-hide-md-up">
           <ion-buttons>
-
-            <!-- Carrito (solo icono) -->
             <ion-button fill="clear" routerLink="/carrito">
               <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
             </ion-button>
 
-            <!-- Iniciar Sesión (texto) -->
-            <ion-button fill="clear" routerLink="/login">Iniciar Sesión</ion-button>
+            <ng-container *ngIf="usuario; else loginMobile">
+              <ion-button fill="clear">
+                <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+              </ion-button>
+              <ion-button fill="clear" (click)="logout()">
+                Salir
+              </ion-button>
+            </ng-container>
 
-            <!-- Menú lateral -->
+            <ng-template #loginMobile>
+              <ion-button fill="clear" routerLink="/login">Iniciar Sesión</ion-button>
+            </ng-template>
+
             <ion-menu-button autoHide="false"></ion-menu-button>
-            
           </ion-buttons>
         </ion-col>
 
@@ -44,13 +50,24 @@
           </ion-buttons>
         </ion-col>
   
-        <!-- Carrito y login -->
+        <!-- Carrito y login / perfil -->
         <ion-col size="12" size-md="2" class="ion-text-end ion-hide-sm-down">
           <ion-buttons>
             <ion-button fill="clear">
               <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
             </ion-button>
-            <ion-button color="primary" routerLink="/login">Inicia Sesión</ion-button>
+
+            <ng-container *ngIf="usuario; else loginBtn">
+              <ion-button fill="clear">
+                <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+                {{ usuario.username }}
+              </ion-button>
+              <ion-button fill="clear" (click)="logout()">Salir</ion-button>
+            </ng-container>
+
+            <ng-template #loginBtn>
+              <ion-button color="primary" routerLink="/login">Inicia Sesión</ion-button>
+            </ng-template>
           </ion-buttons>
         </ion-col>
 

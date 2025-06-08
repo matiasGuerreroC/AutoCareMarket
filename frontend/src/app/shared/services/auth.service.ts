@@ -31,6 +31,10 @@ export class AuthService {
 
   constructor(private httpClient: HttpClient, private router: Router) {
     this.loadToken();
+    const savedUser = localStorage.getItem('auth-user');
+    if (savedUser) {
+      this.userData.next(JSON.parse(savedUser));
+    }
   }
 
   // Métodos auxiliares (puedes mantener los que ya tienes)
@@ -52,12 +56,14 @@ export class AuthService {
   saveAuthData(token: string, user: any) {
     this.token = token;
     localStorage.setItem('auth-token', token);
+    localStorage.setItem('auth-user', JSON.stringify(user));
     this.userData.next(user);
   }
 
   logout() {
     this.token = null;
     localStorage.removeItem('auth-token');
+    localStorage.removeItem('auth-user');
     this.userData.next(null);
     this.router.navigateByUrl('/login', { replaceUrl: true });
   }

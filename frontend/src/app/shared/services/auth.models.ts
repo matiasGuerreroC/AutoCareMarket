@@ -9,6 +9,7 @@ export interface UserData {
   id: string;
   username: string;
   email: string;
+  role: 'user' | 'admin';
 }
 
 export interface AuthResponse {
