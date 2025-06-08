@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const resenas = require('../data/resenas');
+const Resena = require('../models/resenas'); // 👈 Importa el modelo Mongoose
 
-// Ruta: /api/resenas
-router.get('/resenas', (req, res) => {
+router.get('/resenas', async (req, res) => {
   try {
-    res.status(200).json(resenas); // ✅ Éxito
+    const resenas = await Resena.find();
+    res.status(200).json(resenas);
   } catch (error) {
     console.error('Error al obtener reseñas:', error);
-    res.status(500).json({ mensaje: 'Error interno del servidor' }); // ⚠️ Falla
+    res.status(500).json({ mensaje: 'Error interno del servidor' });
   }
 });
 
