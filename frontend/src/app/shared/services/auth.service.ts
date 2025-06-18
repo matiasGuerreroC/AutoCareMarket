@@ -112,6 +112,9 @@ export class AuthService {
         }
       }),
       catchError(e => {
+        if (e.status === 429) {
+          throw new Error('Demasiados intentos fallidos. Intenta nuevamente más tarde.');
+        }
         throw new Error(e.error?.message || 'Error desconocido al iniciar sesión');
       })
     );
