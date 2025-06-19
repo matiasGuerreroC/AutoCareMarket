@@ -150,3 +150,47 @@
   padding-left: 16px;
   padding-right: 16px;
 }
+
+.cars-api-section {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.cars-api-card {
+  background: linear-gradient(
+      90deg,
+      rgba(46, 105, 161, 1) 0%,
+      rgba(17, 38, 59, 1) 25%
+    );
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+
+  ion-card-title {
+    color: #fff;
+  }
+}
+
+ion-card-subtitle {
+  color: var(--ion-color-medium);
+}
+
+ion-card-content p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.auto-card {
+  background: linear-gradient(
+      90deg,
+      rgba(46, 105, 161, 1) 0%,
+      rgba(17, 38, 59, 1) 25%
+    );
+  box-shadow: 0 4px 12px rgb(255, 255, 255);
+  border-radius: 16px;
+  color: #fff;
+}
+
+ion-input {
+  --background: #fff;
+  --color: #000;
+}

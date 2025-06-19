@@ -98,7 +98,122 @@
     </ion-row>
     
   </ion-grid>
-  
+
+  <!-- Busqueda Info de Autos -->
+  <ion-grid class="ion-padding cars-api-section">
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12">
+        <ion-card class="cars-api-card">
+          <ion-card-header>
+            <ion-card-title class="ion-text-center">
+              <ion-icon name="car-sport-outline"></ion-icon>
+              Busca tu auto
+            </ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+
+            <ion-row>
+              <ion-col size="12" size-md="6">
+                <ion-input
+                  label="Marca"
+                  placeholder="Ej: Toyota"
+                  [(ngModel)]="marca"
+                  fill="outline">
+                </ion-input>
+              </ion-col>
+
+              <ion-col size="12" size-md="6">
+                <ion-input
+                  label="Modelo (opcional)"
+                  placeholder="Ej: Corolla"
+                  [(ngModel)]="modelo"
+                  fill="outline">
+                </ion-input>
+              </ion-col>
+            </ion-row>
+
+            <ion-row class="ion-margin-top">
+              <ion-col size="12" class="ion-text-center">
+                <ion-button expand="block" color="primary" (click)="buscarAutos()">
+                  Buscar
+                </ion-button>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="cargandoAutos">
+              <ion-col size="12" class="ion-text-center">
+                <ion-spinner name="crescent"></ion-spinner>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="errorAutos">
+              <ion-col size="12" class="ion-text-center">
+                <ion-text color="danger">{{ errorAutos }}</ion-text>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="resultadosAutos.length > 0" class="ion-justify-content-center">
+              <ion-col size="12">
+                <h4 style="color: #fff;">Resultados encontrados:</h4>
+              </ion-col>
+
+              <ion-col size="12" *ngFor="let auto of resultadosAutos">
+                <ion-card color="light" class="auto-card">
+                  <ion-card-header>
+                    <ion-card-title>
+                      {{ auto.make }} {{ auto.model }} ({{ auto.year }})
+                    </ion-card-title>
+                    <ion-card-subtitle>
+                      {{ auto.class | titlecase }}
+                    </ion-card-subtitle>
+                  </ion-card-header>
+
+                  <ion-card-content>
+                    <ion-grid>
+                      <ion-row>
+                        <ion-col size="6">
+                          <ion-icon name="water-outline"></ion-icon>
+                          <strong> Combustible:</strong>
+                          <p>{{ auto.fuel_type }}</p>
+                        </ion-col>
+
+                        <ion-col size="6">
+                          <ion-icon name="settings-outline"></ion-icon>
+                          <strong> Transmisión:</strong>
+                          <p>{{ auto.transmission | uppercase }}</p>
+                        </ion-col>
+
+                        <ion-col size="6">
+                          <ion-icon name="cube-outline"></ion-icon>
+                          <strong> Cilindros:</strong>
+                          <p>{{ auto.cylinders }}</p>
+                        </ion-col>
+
+                        <ion-col size="6">
+                          <ion-icon name="speedometer-outline"></ion-icon>
+                          <strong> Desplazamiento:</strong>
+                          <p>{{ auto.displacement }} L</p>
+                        </ion-col>
+
+                        <ion-col size="6">
+                          <ion-icon name="navigate-outline"></ion-icon>
+                          <strong> Tracción:</strong>
+                          <p>{{ auto.drive }}</p>
+                        </ion-col>
+
+                      </ion-row>
+                    </ion-grid>
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+            </ion-row>
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
   <!-- Footer -->
   <app-footer></app-footer>
