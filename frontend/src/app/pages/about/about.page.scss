@@ -115,4 +115,22 @@
         margin-top: 12px;
       }
     }
-  }  
+  }
+
+  .map-section {
+  ion-col {
+    padding: 0;
+  }
+
+  h3 {
+    margin-bottom: 1rem;
+  }
+}
+
+#map {
+  width: 100%;
+  height: 300px;
+  min-height: 300px;
+  border-radius: 12px;
+  background-color: #dcdcdc; // por si tarda en cargar
+}
