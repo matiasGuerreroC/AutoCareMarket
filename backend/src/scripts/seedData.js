@@ -89,7 +89,7 @@ const resenas = [
 
 const seed = async () => {
   try {
-    await connectDB(); // 🔥 Usa tu lógica común de conexión
+    await connectDB();
 
     // Limpia colecciones previas
     await Producto.deleteMany();

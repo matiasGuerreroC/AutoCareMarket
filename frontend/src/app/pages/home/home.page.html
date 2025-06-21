@@ -99,6 +99,32 @@
     
   </ion-grid>
   
+  <!-- Recomendaciones según el clima -->
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col size="12">
+        <app-section-title title="Recomendados según el clima en {{ ciudad }}"></app-section-title>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="productosRecomendados.length > 0">
+      <ion-col size="12" class="producto-col">
+        <app-product-carousel [productos]="productosRecomendados"></app-product-carousel>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="weather && productosRecomendados.length === 0">
+      <ion-col size="12" class="ion-text-center ion-padding">
+        <ion-text color="medium">No se encontraron productos recomendados para el clima actual.</ion-text>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="!weather">
+      <ion-col size="12" class="ion-text-center ion-padding">
+        <ion-spinner name="crescent"></ion-spinner>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
   <!-- Footer -->
   <app-footer></app-footer>

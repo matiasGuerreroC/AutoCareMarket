@@ -17,4 +17,8 @@ export class ApiService {
   getResenas(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/resenas`);
   }
+
+  getProductos(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/productos`);
+  }
 }
