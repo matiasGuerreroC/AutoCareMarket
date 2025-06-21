@@ -26,7 +26,7 @@
   <ion-grid class="contact-section">
     <ion-row>
       <!-- Información de contacto -->
-      <ion-col size="4" class="info-col">
+      <ion-col size="12" size-md="3" class="info-col">
         <ion-card>
           <ion-card-content>
             <h4><ion-icon name="call-outline"></ion-icon> <strong>Llámanos</strong></h4>
@@ -45,7 +45,7 @@
       </ion-col>
   
       <!-- Formulario de contacto -->
-      <ion-col size="8" class="form-col">
+      <ion-col size="12" size-md="6" class="form-col">
         <h3 class="form-title"><strong>Contáctanos</strong></h3>
         <form>
           <ion-row class="no-padding">
@@ -80,16 +80,13 @@
           </ion-row>
         </form>
       </ion-col>
-    </ion-row>
-  </ion-grid>
 
-  <!-- Mapa de ubicación -->
-  <ion-grid class="map-section ion-padding">
-    <ion-row>
-      <ion-col size="12">
-        <h3 class="ion-text-center">Nuestra Ubicación</h3>
-        <div id="map" style="height: 300px; border-radius: 12px;"></div>
+      <!-- Mapa embebido al lado del formulario -->
+      <ion-col size="12" size-md="3" class="map-col">
+        <h4 class="ion-text-center">Nuestra Ubicación</h4>
+        <div id="map" style="height: 250px; border-radius: 12px;"></div>
       </ion-col>
+
     </ion-row>
   </ion-grid>
 

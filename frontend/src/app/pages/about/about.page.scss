@@ -127,10 +127,26 @@
   }
 }
 
-#map {
-  width: 100%;
-  height: 300px;
-  min-height: 300px;
-  border-radius: 12px;
-  background-color: #dcdcdc; // por si tarda en cargar
+.map-col {
+  padding: 1rem 0;
+
+  #map {
+    width: 100%;
+    min-height: 300px;
+    border-radius: 12px;
+    background-color: #dcdcdc;
+  }
+}
+
+// Opcional: mejora márgenes verticales en mobile
+@media (max-width: 768px) {
+  .contact-section {
+    ion-col {
+      margin-bottom: 1rem;
+    }
+
+    .form-col {
+      padding: 0 16px;
+    }
+  }
 }
