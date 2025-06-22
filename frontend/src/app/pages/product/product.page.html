@@ -1,0 +1,31 @@
+<app-header></app-header>
+
+<ion-content *ngIf="producto" [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="6">
+        <ion-img [src]="producto.imagen" alt="{{ producto.nombre }}"></ion-img>
+      </ion-col>
+      <ion-col size="12" size-md="6">
+        <h2>{{ producto.nombre }}</h2>
+        <p>{{ producto.descripcion }}</p>
+        <h3>${{ producto.precio }}</h3>
+        <ion-button color="primary">Agregar al Carrito</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Relacionados -->
+  <ion-grid *ngIf="productosRelacionados.length > 0">
+    <ion-row>
+      <ion-col size="12">
+        <app-section-title title="Productos Relacionados"></app-section-title>
+      </ion-col>
+      <ion-col size="12">
+        <app-product-carousel [productos]="productosRelacionados"></app-product-carousel>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <app-footer></app-footer>
+</ion-content>

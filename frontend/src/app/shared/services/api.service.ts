@@ -10,11 +10,25 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  getProductosDestacados(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/productos-destacados`);
+  // Productos
+  getProductos(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/products`);
   }
 
+  getProductoPorId(id: string): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/products/${id}`);
+  }
+
+  getProductosDestacados(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/products/destacados`);
+  }
+
+  // Reseñas
   getResenas(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/resenas`);
+  }
+
+  getResenasPorProducto(idProducto: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/resenas/product/${idProducto}`);
   }
 }

@@ -40,7 +40,7 @@ app.get('/', (req, res) => {
 });
 
 // Rutas
-const productosRouter = require('./routes/productos');
+const productosRouter = require('./routes/products');
 const resenasRouter = require('./routes/resenas');
 const authRouter = require('./routes/auth');
 
