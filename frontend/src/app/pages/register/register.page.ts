@@ -42,7 +42,7 @@ export class RegisterPage implements OnInit {
         this.firstName, // <-- PASA ESTOS CAMPOS ADICIONALES
         this.lastName,
         this.documentType,
-        // this.documentNumber, // Si lo usas
+        this.documentNumber, // Si lo usas
         this.phone
       )
       .subscribe({

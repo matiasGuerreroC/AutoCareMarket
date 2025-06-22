@@ -80,7 +80,7 @@ export class AuthService {
     firstName: string,
     lastName: string,
     documentType: string,
-    // documentNumber: string, // Si lo usas
+     documentNumber: string, // Si lo usas
     phone: string
   ): Observable<AuthResponse> {
     return this.httpClient.post<AuthResponse>(`${this.AUTH_SERVER_ADDRESS}/api/auth/register`, {
@@ -90,7 +90,7 @@ export class AuthService {
       firstName,
       lastName,
       documentType,
-      // documentNumber, // Si lo usas
+      documentNumber, // Si lo usas
       phone
     }).pipe(
       tap(res => {

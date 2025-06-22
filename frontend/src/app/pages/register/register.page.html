@@ -18,13 +18,13 @@
     <ion-input label="Email" type="email" placeholder="tu@email.com" [(ngModel)]="email" name="email" required></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input label="Contraseña" type="password" placeholder="Ingresar contraseña" [(ngModel)]="password" name="password" required></ion-input>
+    <ion-input label="Contraseña minimo 6 caracteres" type="password" placeholder="Ingresar contraseña" [(ngModel)]="password" name="password" required></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input label="Tipo de documento" type="text" placeholder="RUT" [(ngModel)]="documentType" name="documentType" value="RUT" readonly></ion-input>
+    <ion-input label="Tipo de documento Colocar RUT " type="text" placeholder="RUT" [(ngModel)]="documentType" name="documentType" value="RUT" required></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input label="Número de Documento" type="text" placeholder="Ingrese RUT sin puntos ni guion" [(ngModel)]="documentNumber" name="documentNumber"></ion-input>
+    <ion-input label="Número de Documento" type="text" placeholder="Ingrese RUT sin puntos ni guion" [(ngModel)]="documentNumber" name="documentNumber"required></ion-input>
   </ion-item>
   <ion-item>
     <ion-input label="Teléfono" type="tel" placeholder="+56 Ingrese nro de Celular" [(ngModel)]="phone" name="phone" required></ion-input>
