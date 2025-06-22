@@ -1,31 +1,87 @@
 <app-header></app-header>
 
-<ion-content *ngIf="producto" [fullscreen]="true">
-  <ion-grid>
-    <ion-row>
+<ion-content [fullscreen]="true">
+  
+  <!-- Opcional pero recomendado: Muestra un spinner mientras se cargan los datos -->
+  <div *ngIf="!producto" class="ion-text-center ion-padding-top">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Cargando producto...</p>
+  </div>
+  
+  <ion-grid *ngIf="producto"> 
+  
+    <!-- 1. Sección Principal del Producto -->
+    <ion-row class="ion-align-items-center">
+      
+      <!-- Columna de la Imagen -->
       <ion-col size="12" size-md="6">
-        <ion-img [src]="producto.imagen" alt="{{ producto.nombre }}"></ion-img>
+        <ion-img [src]="producto.imagenUrl" [alt]="producto.nombre" class="product-image"></ion-img>
       </ion-col>
-      <ion-col size="12" size-md="6">
-        <h2>{{ producto.nombre }}</h2>
-        <p>{{ producto.descripcion }}</p>
-        <h3>${{ producto.precio }}</h3>
-        <ion-button color="primary">Agregar al Carrito</ion-button>
+
+      <!-- Columna de Información -->
+      <ion-col size="12" size-md="6" class="product-info-col">
+        <h1 class="product-title">{{ producto.nombre }}</h1>
+
+        <!-- Detalles rápidos (Garantía, Código) -->
+        <ul class="quick-details">
+          <li>Garantía Mínima Legal Vigente: {{ producto.garantia }}</li>
+          <li>Código Fabricante: {{ producto.codigoFabricante }}</li>
+        </ul>
+
+        <!-- Precios -->
+        <div class="price-container">
+          <span class="current-price">$ {{ producto.precio | number:'1.0-0' }}</span>
+        </div>
+
+        <!-- Botón de Agregar al Carro -->
+        <ion-button expand="block" color="primary" class="add-to-cart-btn">
+          <ion-icon name="cart-outline" slot="start"></ion-icon>
+          Agregar al carro
+        </ion-button>
+
+        <!-- Información de Despacho -->
+        <p class="shipping-info">
+          Los tiempos de despacho pueden variar, dependiendo de la cantidad de productos, tu domicilio y disponibilidad de tu carro de compra.
+        </p>
       </ion-col>
     </ion-row>
+
+    <!-- 2. Sección de Especificaciones y Detalles -->
+    <ion-row class="details-section">
+      <!-- Columna de Especificaciones -->
+      <ion-col size="12" size-lg="6">
+        <h2 class="section-title">Especificaciones</h2>
+        <!-- Protección adicional para el array de especificaciones -->
+        <table class="specs-table" *ngIf="producto.especificaciones && producto.especificaciones.length > 0">
+          <tbody>
+            <!-- 'spec' aquí es cada string, ej: "Tipo: Tira LED RGB" -->
+            <tr *ngFor="let spec of producto.especificaciones">
+              <!-- Parte antes de los dos puntos -->
+              <td>{{ spec.split(':')[0] }}</td>
+              <!-- Parte después de los dos puntos -->
+              <td>{{ spec.split(':')[1] }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </ion-col>
+
+      <!-- Columna de Detalle del Producto -->
+      <ion-col size="12" size-lg="6">
+        <h2 class="section-title">Detalle del Producto</h2>
+        <p class="product-description">
+          {{ producto.descripcion }}
+        </p>
+      </ion-col>
+    </ion-row>
+
   </ion-grid>
 
-  <!-- Relacionados -->
-  <ion-grid *ngIf="productosRelacionados.length > 0">
-    <ion-row>
-      <ion-col size="12">
-        <app-section-title title="Productos Relacionados"></app-section-title>
-      </ion-col>
-      <ion-col size="12">
-        <app-product-carousel [productos]="productosRelacionados"></app-product-carousel>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <!-- 3. Sección de Productos Relacionados -->
+  <!-- También protegemos el carrusel para que solo aparezca si hay datos -->
+  <div *ngIf="productosRelacionados.length > 0">
+    <app-section-title title="Productos Relacionados"></app-section-title>
+    <app-product-carousel [productos]="productosRelacionados"></app-product-carousel>
+  </div>
 
   <app-footer></app-footer>
 </ion-content>
