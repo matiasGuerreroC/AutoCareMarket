@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/shared/services/api.service';
+import { CartService } from 'src/app/shared/services/cart.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ export class HomePage implements OnInit {
   productosDestacados: any[] = [];
   resenasClientes: any[] = [];
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private cartService: CartService) {}
 
   ngOnInit() {
     this.apiService.getProductosDestacados().subscribe(data => {
@@ -21,5 +22,10 @@ export class HomePage implements OnInit {
     this.apiService.getResenas().subscribe(data => {
       this.resenasClientes = data;
     });
+  }
+
+  agregarAlCarrito(producto: any) {
+    this.cartService.addToCart(producto);
+    // Opcional: muestra un mensaje de éxito
   }
 }

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router'; // Necesitas ActivatedRoute para leer la URL
 import { ApiService } from 'src/app/shared/services/api.service';
+import { CartService } from 'src/app/shared/services/cart.service';
+import { ModalController } from '@ionic/angular';
+import { CartModalComponent } from 'src/app/components/cart-modal/cart-modal.component';
 
 @Component({
   selector: 'app-product',
@@ -17,7 +20,9 @@ export class ProductPage implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private cartService: CartService,
+    private modalCtrl: ModalController
   ) {}
 
   ngOnInit() {
@@ -71,5 +76,13 @@ export class ProductPage implements OnInit {
     });
   }
 
-  
+  async agregarAlCarrito() {
+    this.cartService.addToCart(this.producto);
+    // Opcional: abre el modal de confirmación si lo tienes
+    // const modal = await this.modalCtrl.create({
+    //   component: CartModalComponent,
+    //   cssClass: 'cart-modal'
+    // });
+    // await modal.present();
+  }
 }

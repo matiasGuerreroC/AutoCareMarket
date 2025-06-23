@@ -1,0 +1,84 @@
+<app-header></app-header>
+
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <!-- Carro de compra -->
+      <ion-col size="12" size-md="7">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>
+              Carro de Compra <span *ngIf="cart.length">({{ cart.length }} productos)</span>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-row class="ion-align-items-center" *ngFor="let item of cart">
+              <ion-col size="3">
+                <img [src]="item.imagen" [alt]="item.nombre" style="width: 100px;">
+              </ion-col>
+              <ion-col size="5">
+                <b>{{ item.nombre }}</b><br>
+                SKU: {{ item.codigoFabricante }}<br>
+                <span>Stock disponible</span><br>
+                <span>${{ item.precio | number:'1.0-0' }}</span>
+              </ion-col>
+              <ion-col size="2" class="ion-text-center">
+                <ion-button size="small" (click)="decreaseQty(item)">-</ion-button>
+                <span>{{ item.qty }}</span>
+                <ion-button size="small" (click)="increaseQty(item)">+</ion-button>
+              </ion-col>
+              <ion-col size="2" class="ion-text-center">
+                <ion-button color="danger" size="small" (click)="removeItem(item)">Eliminar</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+          <ion-card-content class="ion-text-end">
+            <b>Total: ${{ getTotal() | number:'1.0-0' }}</b>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <!-- Pedido de compra -->
+      <ion-col size="12" size-md="5">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Pedido de compra</ion-card-title>
+            <ion-card-subtitle>ID: {{ orderId }}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <div>
+              <b>Elija el método de entrega</b>
+              <ion-segment [(ngModel)]="deliveryMethod">
+                <ion-segment-button value="retiro">Retiro en tienda</ion-segment-button>
+                <ion-segment-button value="despacho">Despacho</ion-segment-button>
+              </ion-segment>
+            </div>
+            <div *ngIf="deliveryMethod === 'retiro'" class="ion-margin-top">
+              <b>Tienda:</b> Valparaíso<br>
+              <b>Dirección:</b> Calle 123, Valparaíso<br>
+              <b>Teléfono:</b> +56298765432<br>
+              <ion-note color="primary">Retiro en Tienda<br>Hoy 21 de Abril</ion-note>
+            </div>
+            <div *ngIf="deliveryMethod === 'despacho'" class="ion-margin-top">
+              <ion-input label="Dirección de despacho" [(ngModel)]="shippingAddress"></ion-input>
+            </div>
+            <div class="ion-margin-top">
+              <div>Subtotal: ${{ getTotal() | number:'1.0-0' }}</div>
+              <div><b>Total:</b> <span style="color:red">${{ getTotal() | number:'1.0-0' }}</span></div>
+            </div>
+            <ion-button expand="block" color="primary" class="ion-margin-top" (click)="checkout()">
+              Continuar
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <app-footer></app-footer>
+
+</ion-content>
+
+
+<!--<ion-button color="primary" (click)="agregarAlCarrito(producto)">Agregar al carrito</ion-button>-->
