@@ -1,13 +1,13 @@
 <swiper-container #swiperEl navigation pagination space-between="10" navigation="true" pagination="false" class="custom-swiper" init="false">
   <swiper-slide *ngFor="let producto of productos">
-    <ion-card class="producto-card">
+    <ion-card class="producto-card" [routerLink]="['/product', producto._id]">
       <img [src]="producto.imagen" />
       <ion-card-header>
         <ion-card-title>{{ producto.nombre }}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <div class="descripcion">{{ producto.descripcion }}</div>
-        <p>⭐⭐⭐⭐⭐</p>
+        <p></p>
         <p class="precio">${{ producto.precio }}</p>
       </ion-card-content>
     </ion-card>
