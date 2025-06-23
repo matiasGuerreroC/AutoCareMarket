@@ -48,7 +48,7 @@
           </ion-card-content>
         </ion-card>
 
-        <ion-button color="primary" class="ver-producto-btn">Ver Producto</ion-button>
+        <ion-button [routerLink]="['/product', '68586ed22078bedd9edd516a']" color="primary" class="ver-producto-btn">Ver Producto</ion-button>
       </ion-col>
 
       <!-- Columna central: imagen del producto -->
@@ -76,7 +76,9 @@
     <!-- Productos destacados -->
     <ion-row class="productos-destacados">
       <ion-col size="12" class="producto-col">
-        <app-product-carousel [productos]="productosDestacados"></app-product-carousel>
+        <div *ngIf="productosDestacados.length > 0">
+          <app-product-carousel [productos]="productosDestacados"></app-product-carousel>
+        </div>
       </ion-col>
     </ion-row>
 

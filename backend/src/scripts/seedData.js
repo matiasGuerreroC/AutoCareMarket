@@ -202,6 +202,20 @@ const products = [
     codigoFabricante: 'ACM-CVL-015',
     garantia: 'Garantía Legal Vigente (6 meses)',
     especificaciones: ['Material: Cuero sintético y goma interior', 'Diámetro: Universal (37-39 cm)', 'Diseño: Ergonómico y antideslizante', 'Fácil instalación sin herramientas']
+  },
+  {
+    _id: new mongoose.Types.ObjectId(),
+    nombre: 'Kit de Lavado y Secado MOMO (9 Piezas)',
+    descripcion: 'Un completo kit de la prestigiosa marca MOMO para el lavado y secado profesional de tu auto. Incluye todo lo necesario para dejarlo impecable y protegido.',
+    precio: 21000,
+    precioAnterior: 30000,
+    imagen: 'assets/productos/kit-momo.png',
+    stock: 20,
+    categoria: 'Kits de Limpieza',
+    destacado: true,
+    codigoFabricante: '1054087',
+    garantia: 'Garantía Legal Vigente (6 meses)',
+    especificaciones: [ 'Marca: MOMO', 'Total Piezas: 9', '1 Guante de Lavado de Microfibra', '1 Toalla de secado "Waffle Weave"', '2 Toallas de Microfibra Multiuso', '2 Aplicadores de cera/sellador', '1 Esponja de microfibra tipo "Noodle"', '1 Bolso de transporte con cierre' ]
   }
 ];
 
@@ -332,6 +346,20 @@ const resenas = [
       imagen: 'assets/usuarios/laura.png',
       estrellas: 5,
       idProducto: products[14]._id
+    },
+    {
+      usuario: 'Sebastián A.',
+      comentario: 'Calidad increíble. El guante es súper suave y las toallas de secado absorben muchísima agua. Vale cada peso, el auto queda perfecto. La marca MOMO no decepciona.',
+      imagen: 'assets/usuarios/sebastian.png',
+      estrellas: 5,
+      idProducto: products[15]._id // Asociada al último producto añadido: Kit MOMO
+    },
+    {
+      usuario: 'Carla Z.',
+      comentario: 'Muy buen kit, trae de todo un poco. Los aplicadores son un poco pequeños para mi gusto, pero el resto de los componentes son de excelente calidad. Lo recomiendo.',
+      imagen: 'assets/usuarios/carla.png',
+      estrellas: 4,
+      idProducto: products[15]._id // Asociada al último producto añadido: Kit MOMO
     }
 ];
 

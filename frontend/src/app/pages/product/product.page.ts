@@ -51,10 +51,23 @@ export class ProductPage implements OnInit {
   }
 
   loadRelatedProducts() {
-    this.apiService.getProductos().subscribe(data => {
-      this.productosRelacionados = data
-        .filter(p => p.id !== this.producto.id && p.categoria === this.producto.categoria)
-        .slice(0, 5);
+    if (!this.producto || !this.producto.categoria) {
+      console.error('No se puede cargar productos relacionados sin un producto principal o categoría.');
+      return;
+    }
+
+    this.apiService.getProductos().subscribe({
+      next: (todosLosProductos) => {
+        this.productosRelacionados = todosLosProductos.filter(p => {
+          const mismaCategoria = p.categoria === this.producto.categoria;
+          const noEsElMismoProducto = p._id !== this.producto._id;
+          return mismaCategoria && noEsElMismoProducto;
+        })
+        .slice(0, 4);
+      },
+      error: (err) => {
+        console.error('Error al cargar productos relacionados:', err);
+      }
     });
   }
 

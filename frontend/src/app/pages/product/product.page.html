@@ -8,14 +8,14 @@
     <p>Cargando producto...</p>
   </div>
   
-  <ion-grid *ngIf="producto"> 
+  <ion-grid *ngIf="producto" class="product-page"> 
   
     <!-- 1. Sección Principal del Producto -->
-    <ion-row class="ion-align-items-center">
+    <ion-row class="ion-align-items-center product-row">
       
       <!-- Columna de la Imagen -->
       <ion-col size="12" size-md="6">
-        <ion-img [src]="producto.imagenUrl" [alt]="producto.nombre" class="product-image"></ion-img>
+        <ion-img [src]="producto.imagen" [alt]="producto.nombre" class="product-image"></ion-img>
       </ion-col>
 
       <!-- Columna de Información -->
@@ -77,11 +77,23 @@
   </ion-grid>
 
   <!-- 3. Sección de Productos Relacionados -->
-  <!-- También protegemos el carrusel para que solo aparezca si hay datos -->
-  <div *ngIf="productosRelacionados.length > 0">
-    <app-section-title title="Productos Relacionados"></app-section-title>
-    <app-product-carousel [productos]="productosRelacionados"></app-product-carousel>
-  </div>
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col size="12">
+        <app-section-title title="Productos Relacionados"></app-section-title>
+      </ion-col>
+    </ion-row>
+
+    <!-- Productos relacionados -->
+    <ion-row class="productos-relacionados">
+      <ion-col size="12" class="producto-col">
+        <div *ngIf="productosRelacionados.length > 0">
+          <app-product-carousel [productos]="productosRelacionados"></app-product-carousel>
+        </div>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
 
   <app-footer></app-footer>
 </ion-content>

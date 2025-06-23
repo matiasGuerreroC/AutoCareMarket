@@ -1,4 +1,4 @@
-<swiper-container space-between="10" navigation="true" pagination="false" class="custom-swiper" init="false">
+<swiper-container #swiperEl navigation pagination space-between="10" navigation="true" pagination="false" class="custom-swiper" init="false">
   <swiper-slide *ngFor="let producto of productos">
     <ion-card class="producto-card">
       <img [src]="producto.imagen" />
